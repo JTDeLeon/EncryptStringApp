@@ -51,7 +51,17 @@ class EncryptionString extends Component {
   //Method B:  Replace each char with the char one higher on the ASCII table.
   methodBEncrypt = (originalString) => {
     console.log(`-- Method B Encryption on ${originalString} --`);
-
+    //Get the Ascii Codes
+    let stringArray = originalString.split("");
+    let asciiArray = stringArray.map((letter)=>{
+      const ascii = (letter.charCodeAt(0))+1;
+      return ascii;
+    });
+    let resultArray = asciiArray.map((asciiNum)=>{
+      return String.fromCharCode(asciiNum);
+    })
+    let resultString = resultArray.join('');
+    return resultString;
   }
 
   //Method C:  Replace each char with the 3 next highest chars on the ASCII table.
