@@ -12,13 +12,17 @@ class EncryptionString extends Component {
     const originalString = document.querySelector('#input-string').value;
     console.log("Original String is ",originalString);
 
+    let encryptedString = '';
     //Encrypt
     switch(this.props.choice){
       case 'A' :
       console.log("Encrypting string with A Method");
+      encryptedString = this.methodAEncrypt(originalString);
+      console.log("Encrypted String is ",encryptedString);
       break;
       case 'B' :
       console.log("Encrypting string with B Method");
+      encryptedString = this.methodBEncrypt(originalString);
       break;
       case 'C' :
       console.log("Encrypting string with C Method")
@@ -26,15 +30,27 @@ class EncryptionString extends Component {
       default :
         console.log("No Encryption Selected");
     }
+
+    console.log("Outside the switch, the encrypted string is ", encryptedString);
   }
 
   //Method A:  Replace the string with all 'X's.
-  methodAEncrypt = () => {
-    
+  methodAEncrypt = (originalString) => {
+    console.log(`-- Method A Encryption on ${originalString} --`);
+    //Convert String To Array
+    let stringArray = originalString.split("");
+    //Manipulate Array
+    let resultArray = stringArray.map((letter)=>{
+      return 'X';
+    });
+    //Convert Array Back To String
+    let resultString = resultArray.join('');
+    return resultString;
   }
 
   //Method B:  Replace each char with the char one higher on the ASCII table.
-  methodBEncrypt = () => {
+  methodBEncrypt = (originalString) => {
+    console.log(`-- Method B Encryption on ${originalString} --`);
 
   }
 
