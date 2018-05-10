@@ -1,0 +1,10 @@
+.main-menu-container {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.main-menu-container button {
+  border: 1px solid black;
+  margin: 0 20px;
+}
