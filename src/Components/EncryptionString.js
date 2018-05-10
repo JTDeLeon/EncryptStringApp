@@ -26,6 +26,7 @@ class EncryptionString extends Component {
       break;
       case 'C' :
       console.log("Encrypting string with C Method")
+      encryptedString = this.methodCEncrypt(originalString);
       break;
       default :
         console.log("No Encryption Selected");
@@ -65,8 +66,26 @@ class EncryptionString extends Component {
   }
 
   //Method C:  Replace each char with the 3 next highest chars on the ASCII table.
-  methodCEncrypt = () => {
+  methodCEncrypt = (originalString) => {
+    console.log(`-- Method C Encryption on ${originalString} --`);
+    let stringArray = originalString.split("");
+    let asciiArray = stringArray.map((letter)=>{
+      const ascii =[
+        (letter.charCodeAt(0))+1,
+        (letter.charCodeAt(0))+2,
+        (letter.charCodeAt(0))+3
+      ]
+      return ascii;
+    });
+    let resultArray = asciiArray.map((arrayOfCharCodes)=>{
+      return arrayOfCharCodes.map((charCode)=>{
+        return String.fromCharCode(charCode);
+      })
+    });
 
+    let resultString = resultArray.join('').split(',').join('');
+
+    return resultString;
   }
 
   render() {
