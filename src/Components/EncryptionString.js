@@ -33,6 +33,9 @@ class EncryptionString extends Component {
     }
 
     console.log("Outside the switch, the encrypted string is ", encryptedString);
+
+    this.props.originalStringPassed(originalString);
+    this.props.encryptedStringPassed(encryptedString);
   }
 
   //Method A:  Replace the string with all 'X's.
