@@ -2,7 +2,7 @@
 ### Programming Assignment For Cubic Corporation (Built In React.js)
 
 ## How to run
-Use 'npm run build' to build a production version of the application.
+Use 'npm run build' to build a production version of the application. Then 'serve -s build' to open a local host for viewing the app.
 
 Use 'npm start' to start a local server for the source files of the application.
 

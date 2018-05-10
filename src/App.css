@@ -20,7 +20,7 @@ footer {
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 140px;
   padding: 20px;
   color: white;
 }
@@ -33,7 +33,20 @@ footer {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Smartphones & Tablet (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+  .App {
+    padding: inherit;
+  }
+
+  .main-menu-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button.mm-btn {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+  }
 }

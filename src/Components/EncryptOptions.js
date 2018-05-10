@@ -27,21 +27,23 @@ class EncryptOptions extends Component {
 
       <p id="method-direction">Please select your encryption method below!</p>
 
-      <button
-        onClick={this.handleClick}
-        id="btn-a"
-        className="selection-btn"
-        >A</button>
-      <button
-        onClick={this.handleClick}
-        id="btn-b"
-        className="selection-btn"
-      >B</button>
-      <button
-        onClick={this.handleClick}
-        id="btn-c"
-        className="selection-btn"
-      >C</button>
+      <div className="encryption-buttons">
+        <button
+          onClick={this.handleClick}
+          id="btn-a"
+          className="selection-btn"
+          >A</button>
+          <button
+            onClick={this.handleClick}
+            id="btn-b"
+            className="selection-btn"
+            >B</button>
+            <button
+              onClick={this.handleClick}
+              id="btn-c"
+              className="selection-btn"
+              >C</button>
+      </div>
     </div>
     );
   }

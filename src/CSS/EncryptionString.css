@@ -20,3 +20,27 @@ input#input-string {
 form input {
   text-align: center;
 }
+
+
+/* Smartphones & Tablet (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+  #string-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  label, input, #btn-encrypt {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  label, input {
+    font-size: 20px;
+  }
+
+  .encryption-string-container h1 {
+    margin: 10px;
+  }
+
+}

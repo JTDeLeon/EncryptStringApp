@@ -56,7 +56,7 @@ class App extends Component {
         {/* Header */}
         <div className="App-header">
           <h1 className="App-title">String Encryption App</h1>
-          <p className="App-intro">This app will encrypt a string passed in through it.<br/><br/>Go ahead, give it a try!</p>
+          <p className="App-intro">This app will encrypt a string passed through it.<br/><br/>Go ahead, give it a try!</p>
         </div>
 
         {(this.state.mainMenu)?(
