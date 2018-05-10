@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  padding: 30px;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+#credit-name {
+  color: blue;
 }
 
 .App-logo {

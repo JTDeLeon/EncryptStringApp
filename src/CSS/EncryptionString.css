@@ -5,4 +5,18 @@ input#input-string {
 
 #btn-encrypt {
   border: 1px solid black;
+  padding: 5px 25px;
+  background-color: lawngreen;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+#btn-encrypt:hover {
+  background-color: blue;
+  color: white;
+  border-color: #222;
+}
+
+form input {
+  text-align: center;
 }

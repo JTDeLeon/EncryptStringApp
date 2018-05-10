@@ -1,0 +1,13 @@
+#encrypted-string {
+  font-weight: bold;
+  color: green;
+  font-size: large;
+}
+
+#original-string {
+  font-size: small;
+}
+
+.show-results-container h2{
+  margin: 10px 0;
+}

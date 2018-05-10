@@ -1,3 +1,11 @@
+# String Encryption App
+### Programming Assignment For Cubic Corporation (Built In React.js)
+
+## How to run
+Use 'npm run build' to build a production version of the application.
+
+Use 'npm start' to start a local server for the source files of the application.
+
 ## Instructions
 
 Develop an application to “encrypt” a string.  Present the user a ‘main menu’ of 2 options:  1) Select string encryption method; 2) Exit.

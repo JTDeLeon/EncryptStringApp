@@ -2,3 +2,34 @@
    border: 1px solid black;
    margin: 0 20px;
 }
+
+#method-descriptions {
+  text-align: left;
+}
+
+.method-description {
+  margin: 10px 0;
+}
+
+#method-direction {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.method-title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.selection-btn {
+  padding: 5px 25px;
+  background-color: lawngreen;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.selection-btn:hover {
+  background-color: blue;
+  color: white;
+  border-color: #222;
+}

@@ -4,26 +4,29 @@ import '../CSS/MainMenu.css'
 
 class MainMenu extends Component {
 
+  //Begins the encryption sequence
   encryptBegin = (e) => {
     e.preventDefault();
-    console.log("The button click worked");
     this.props.isClicked(true);
   }
 
-
+  //Handles when a user selects exit from main menu
   handleExit = (e) => {
     e.preventDefault();
-    console.log("exit selected");
 
     const target = document.querySelector('.App');
 
+    //Clears html from App
     target.innerHTML = " ";
 
+    //Creates a goodbye message
     const goodbyeMessage = document.createElement('h1');
     goodbyeMessage.textContent = "Thanks for encrypting, see you next time you want to be secure!";
 
+    //Writes message to DOM
     target.appendChild(goodbyeMessage);
 
+    //Incase the user made a mistake, or wants to keep encrypting this is the fallback
     const refreshButton = document.createElement('button');
 
     refreshButton.textContent = "Didn't mean to exit? Start Over";
@@ -33,23 +36,26 @@ class MainMenu extends Component {
 
     target.appendChild(refreshButton);
 
-
   }
 
 
   render() {
     return (
     <div className="main-menu-container">
-      <h2>Main Menu</h2>
+      <h2 id="main-menu-title">Main Menu</h2>
       <p>Press 'Select String Encryption Method' to begin!</p>
 
       {/*Begins the encryption sequence */}
-      <button onClick={this.encryptBegin}>
+      <button
+        className="mm-btn"
+        onClick={this.encryptBegin}>
         Select String Encryption Method
       </button>
 
       {/*Exits the user from program with a nice message */}
-      <button onClick={this.handleExit}>
+      <button
+        className="mm-btn"
+        onClick={this.handleExit}>
         Exit
       </button>
     </div>

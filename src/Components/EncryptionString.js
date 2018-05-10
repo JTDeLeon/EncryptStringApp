@@ -6,41 +6,41 @@ class EncryptionString extends Component {
 
   encryptString = (e) => {
     e.preventDefault();
-    console.log("Encrypting String!");
+    //Handles if string is empty
+    if(!document.querySelector('#input-string').value){
+      if(!document.querySelector('#error-message')){
+        const errorMessage = "<p id='error-message' style='color:red'>Please enter a valid string and try again.</p>";
+        document.querySelector('#string-form').insertAdjacentHTML('afterend',errorMessage);
+      }
+      return;
+    }
 
     //Collect String Value
     const originalString = document.querySelector('#input-string').value;
-    console.log("Original String is ",originalString);
 
     let encryptedString = '';
     //Encrypt
     switch(this.props.choice){
       case 'A' :
-      console.log("Encrypting string with A Method");
       encryptedString = this.methodAEncrypt(originalString);
-      console.log("Encrypted String is ",encryptedString);
       break;
       case 'B' :
-      console.log("Encrypting string with B Method");
       encryptedString = this.methodBEncrypt(originalString);
       break;
       case 'C' :
-      console.log("Encrypting string with C Method")
       encryptedString = this.methodCEncrypt(originalString);
       break;
       default :
         console.log("No Encryption Selected");
     }
 
-    console.log("Outside the switch, the encrypted string is ", encryptedString);
-
+    //Passes strings to parent
     this.props.originalStringPassed(originalString);
     this.props.encryptedStringPassed(encryptedString);
   }
 
   //Method A:  Replace the string with all 'X's.
   methodAEncrypt = (originalString) => {
-    console.log(`-- Method A Encryption on ${originalString} --`);
     //Convert String To Array
     let stringArray = originalString.split("");
     //Manipulate Array
@@ -54,7 +54,6 @@ class EncryptionString extends Component {
 
   //Method B:  Replace each char with the char one higher on the ASCII table.
   methodBEncrypt = (originalString) => {
-    console.log(`-- Method B Encryption on ${originalString} --`);
     //Get the Ascii Codes
     let stringArray = originalString.split("");
     let asciiArray = stringArray.map((letter)=>{
@@ -70,7 +69,6 @@ class EncryptionString extends Component {
 
   //Method C:  Replace each char with the 3 next highest chars on the ASCII table.
   methodCEncrypt = (originalString) => {
-    console.log(`-- Method C Encryption on ${originalString} --`);
     let stringArray = originalString.split("");
     let asciiArray = stringArray.map((letter)=>{
       const ascii =[
@@ -94,15 +92,17 @@ class EncryptionString extends Component {
   render() {
     return (
     <div className="encryption-string-container">
-      <h1>This is the EncryptionString Component</h1>
-      <h2>selection choice        <span>{this.props.choice}</span>
-      </h2>
+      <h1>What string do you want to encrypt?</h1>
+      <h4>Your Encryption Method Choice is       <span>{this.props.choice}</span>
+      </h4>
 
-      <form>
+      <form id="string-form">
         <label htmlFor="input-string">String To Encrypt:</label>
         <input
           id="input-string"
-          type="text"/>
+          type="text"
+          placeholder="Enter String"
+        />
         <button id="btn-encrypt"
           onClick={this.encryptString}>Encrypt!</button>
       </form>

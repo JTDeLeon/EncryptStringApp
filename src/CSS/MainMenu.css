@@ -12,3 +12,34 @@
 #refresh-btn {
   border: 1px solid black;
 }
+
+h2#main-menu-title {
+  margin: 10px 0;
+}
+
+#refresh-btn {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#refresh-btn:hover {
+  background-color: green;
+  color: white;
+  border-color: #222;
+}
+
+.mm-btn {
+  padding: 5px 25px;
+  background-color: lawngreen;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.mm-btn:hover {
+  background-color: blue;
+  color: white;
+  border-color: #222;
+}
